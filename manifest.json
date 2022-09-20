@@ -15,5 +15,8 @@
     "default_icon": {
       "32": "images/logo.png"
     }
+  },
+  "icons": {
+    "32": "images/logo.png"
   }
 }

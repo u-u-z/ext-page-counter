@@ -10,7 +10,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  console.log(changeInfo, tab);
+  // console.log(changeInfo, tab); // for debug.
 
   if (changeInfo.status == "complete" && tab.active) {
     chrome.storage.sync.get("counter", ({ counter }) => {
@@ -19,7 +19,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         : chrome.storage.sync.set({ counter: 0 });
 
       chrome.action.setBadgeText({ text: `${counter + 1}` });
-      console.log(`# Global counter: ${counter + 1}`);
+      // console.log(`# Global counter: ${counter + 1}`);
     });
   }
 });
